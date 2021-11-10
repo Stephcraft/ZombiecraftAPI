@@ -9,4 +9,82 @@
 
 	<name>Zombiecraft API</name>
 	<description>Zombiecraft API is cool</description>
+	
+	<properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+	<repositories>
+		<repository>
+			<id>MG-Dev Jenkins CI Maven Repository</id>
+			<url>https://ci.mg-dev.eu/plugin/repository/everything/</url>
+		</repository>
+		<repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>me.lucko</groupId>
+			<artifactId>commodore</artifactId>
+			<version>1.9</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.16.5-R0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+	</dependencies>
+    
+    <build>
+        <!-- shading -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                        	<!-- <shadedArtifactAttached>false</shadedArtifactAttached> -->
+                            <artifactSet>
+                                <includes>
+                                    <include>me.lucko:commodore</include>
+                                    <include>org.bukkit:bukkit</include>
+                                </includes>
+                            </artifactSet>
+                            <relocations>
+                                <relocation>
+                                    <pattern>me.lucko.commodore</pattern>
+                                    <shadedPattern>net.stephcraft.api.commodore</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>orb.bukkit</pattern>
+                                    <shadedPattern>net.stephcraft.api.bukkit</shadedPattern>
+                                    <excludes>
+	                                    <exclude>org.bukkit.Location</exclude>
+	                                </excludes>
+                                    <includes>
+	                                    <include>org.bukkit.Material</include>
+	                                    <include>org.bukkit.block.*</include>
+	                                </includes>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
