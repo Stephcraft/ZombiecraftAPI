@@ -22,8 +22,8 @@
 			<url>https://ci.mg-dev.eu/plugin/repository/everything/</url>
 		</repository>
 		<repository>
-			<id>bukkit-repo</id>
-			<url>http://repo.bukkit.org/content/groups/public/</url>
+			<id>spigot-repo</id>
+			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 		</repository>
 	</repositories>
 
@@ -35,12 +35,12 @@
 			<scope>compile</scope>
 		</dependency>
 
-	<dependency>
-		<groupId>org.bukkit</groupId>
-		<artifactId>bukkit</artifactId>
-		<version>1.6.4-R2.0</version>
-		<scope>compile</scope>
-	</dependency>
+		<dependency>
+			<groupId>org.spigotmc</groupId>
+			<artifactId>spigot-api</artifactId>
+			<version>1.16.4-R0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
     
     <build>
@@ -61,7 +61,6 @@
                             <artifactSet>
                                 <includes>
                                     <include>me.lucko:commodore</include>
-                                    <include>org.bukkit:bukkit</include>
                                 </includes>
                             </artifactSet>
                             <relocations>
