@@ -9,32 +9,4 @@
 
 	<name>Zombiecraft API</name>
 	<description>Zombiecraft API is cool</description>
-
-	<repositories>
-		<repository>
-			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
-		</repository>
-	</repositories>
-
-	<dependencies>
-		<dependency>
-		    <groupId>com.github.User</groupId>
-		    <artifactId>Repo</artifactId>
-		    <version>Tag</version>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<sourceDirectory>src</sourceDirectory>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<release>16</release>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
