@@ -1,9 +1,5 @@
 package net.stephcraft.zombiecraft.api;
 
-public interface ZombiecraftEasterEgg {
+public abstract class ZombiecraftEasterEgg {
 	
-	// event binding
-	
-	void bind(ZombiecraftLobby lobby);
-	void unbind(ZombiecraftLobby lobby);
 }

@@ -58,11 +58,12 @@
                         </goals>
                         <configuration>
                         	<!-- <shadedArtifactAttached>false</shadedArtifactAttached> -->
-                            <!-- <artifactSet>
+                            <artifactSet>
                                 <includes>
                                     <include>me.lucko:commodore</include>
+                                    <include>org.bukkit:bukkit</include>
                                 </includes>
-                            </artifactSet>-->
+                            </artifactSet>
                             <relocations>
                                 <relocation>
                                     <pattern>me.lucko.commodore</pattern>
