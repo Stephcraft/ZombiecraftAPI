@@ -38,8 +38,8 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>1.16.4-R0.1-SNAPSHOT</version>
-			<scope>provided</scope>
+			<version>1.16.5-R0.1-SNAPSHOT</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
     
@@ -58,26 +58,22 @@
                         </goals>
                         <configuration>
                         	<!-- <shadedArtifactAttached>false</shadedArtifactAttached> -->
-                            <artifactSet>
+                            <!-- <artifactSet>
                                 <includes>
                                     <include>me.lucko:commodore</include>
                                 </includes>
-                            </artifactSet>
+                            </artifactSet>-->
                             <relocations>
                                 <relocation>
                                     <pattern>me.lucko.commodore</pattern>
                                     <shadedPattern>net.stephcraft.api.commodore</shadedPattern>
                                 </relocation>
                                 <relocation>
-                                    <pattern>orb.bukkit</pattern>
+                                    <pattern>org.bukkit</pattern>
                                     <shadedPattern>net.stephcraft.api.bukkit</shadedPattern>
                                     <excludes>
 	                                    <exclude>org.bukkit.Location</exclude>
 	                                </excludes>
-                                    <includes>
-	                                    <include>org.bukkit.Material</include>
-	                                    <include>org.bukkit.block.*</include>
-	                                </includes>
                                 </relocation>
                             </relocations>
                         </configuration>

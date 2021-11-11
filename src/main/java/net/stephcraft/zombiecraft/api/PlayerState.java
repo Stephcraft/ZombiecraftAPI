@@ -3,6 +3,8 @@ package net.stephcraft.zombiecraft.api;
 public class PlayerState {
 	void c() {
 		
+		org.bukkit.Material m;
+		
 		org.bukkit.Location l;
 		
 		org.bukkit.command.BlockCommandSender s;
