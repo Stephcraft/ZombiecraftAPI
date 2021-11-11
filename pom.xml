@@ -72,9 +72,10 @@
                                 <relocation>
                                     <pattern>org.bukkit</pattern>
                                     <shadedPattern>net.stephcraft.api.bukkit</shadedPattern>
-                                    <excludes>
-	                                    <exclude>org.bukkit.Location</exclude>
-	                                </excludes>
+                                    <includes>
+	                                    <include>org.bukkit.Location</include>
+	                                    <include>org.bukkit.Material</include>
+	                                </includes>
                                 </relocation>
                             </relocations>
                         </configuration>
